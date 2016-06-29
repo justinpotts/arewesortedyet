@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Is the Mozilla ball pit sorted yet?">
+    <meta name="author" content="Justin Potts and Moby VonBriesen">
+
+    <title>Are We Sorted Yet?</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.css" rel="stylesheet">
+
+    <style>
+      html,body{
+        height: 100%;
+        margin: 0px;
+        padding: 0px;
+      }
+      #red {
+        background-color: #E25041;
+        height: 40%
+      }
+      #orange {
+        background-color: #FBA026;
+        height: 60%
+      }
+      #yellow {
+        background-color: #F7DA64;
+        height: 50%;
+      }
+      #green {
+        background-color: #61BD6D;
+        height: 30%
+      }
+      #blue {
+        background-color: #3D8EB9;
+        height: 45%
+      }
+      #purple {
+        background-color: #9365B8;
+        height: 60%
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.0.0.min.js" integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="crossorigin="anonymous"></script>
+  </head>
+
+  <body style="height:100%;">
+
+    <div id="row" class="row" style="height:80%">
+      <div id="red" class="col-md-2"></div>
+      <div id="orange" class="col-md-2"></div>
+      <div id="yellow" class="col-md-2"></div>
+      <div id="green" class="col-md-2"></div>
+      <div id="blue" class="col-md-2"></div>
+      <div id="purple" class="col-md-2"></div>
+    </div>
+
+    <br>
+
+    <div class="footer sticky" style="color:#ABABAB;">
+      <center>
+        <p>
+          <a href="https://justinpotts.github.io/arewesortedyet">https://justinpotts.github.io/arewesortedyet</a>
+          &nbsp;
+          <a href="https://www.instagram.com/explore/tags/arewesortedyet/">#AreWeSortedYet<a/>
+        </p>
+        <p>
+          <a href="https://www.instagram.com/mozillaballpit/"><img src="instagram.png" width="30px" height="30px"></a>
+          &nbsp;&nbsp;&nbsp;
+          <a href="https://github.com/justinpotts/arewesortedyet"><img src="github.png" width="30px" height="30px"></a>
+        </p>
+        <p>
+          Made with ❤️ by <a href="https://github.com/justinpotts">justinpotts</a> and <a href="https://github.com/mobyvb">mobyvb</a>.
+        </p>
+      </center>
+    </div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+      var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
+      for(var c=0; c<=6; c++) { // Optimize this with for..in
+        color = colors[c]
+        var element = document.getElementById(color);
+        element.innerHTML = '<h1 style="color:white;">' + Math.round(parseFloat($('#'+color).height() / $('#row').height ()) * 100) + '%</h1>';
+      }
+    </script>
+  </body>
+</html>
