@@ -1,0 +1,50 @@
+html,body{
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.container-fluid {
+  padding-left: 0px;
+  padding-right: 0px;
+  height: 100%;
+  width: @container-desktop !important;
+}
+
+.row {
+  height: 80%;
+}
+
+.footer {
+  color: #ABABAB;
+}
+
+#red {
+  background-color: #E25041;
+  height: 40%
+}
+
+#orange {
+  background-color: #FBA026;
+  height: 60%
+}
+
+#yellow {
+  background-color: #F7DA64;
+  height: 50%;
+}
+
+#green {
+  background-color: #61BD6D;
+  height: 30%
+}
+
+#blue {
+  background-color: #3D8EB9;
+  height: 45%
+}
+
+#purple {
+  background-color: #9365B8;
+  height: 60%
+}
