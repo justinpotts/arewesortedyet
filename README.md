@@ -25,6 +25,8 @@ Happy Sorting!
 
 ## Our Contributors
 - [Peter Elemers](https://github.com/pelmers), Intern
+- [Paul Ellenbogen](https://github.com/paul-e), Intern
+- [Daniel Etcovitch](https://github.com/DanielEtcovitch), Intern
 - [Ryan Hunt](https://github.com/rlhunt), Intern
 - [Francesco Polizzi](https://github.com/FrancescoSTL), Intern
 - [Justin Potts](https://github.com/justinpotts), Intern
