@@ -1,14 +1,3 @@
-'''
-RGB Default Colors from Photo Sample
-
-Red             228 50 26
-Orange          243 138 0
-Yellow          254 223 18
-Green           78 180 78
-Blue            0 40 219
-Purple          168 105 201
-'''
-
 from PIL import Image
 import webcolors
 import os
@@ -122,8 +111,8 @@ def push_update(percentages):
     css.close()
 
     # THIS IS THE MOST DANGEROUS CODE YOU'LL EVER SEE IN YOUR LIFE DO NOT RUN
-    os.system('git add heights.css')
-    os.system('git commit -m "Auto-Update %s') % str(datetime.time())
+    os.system('git add css/heights.css')
+    os.system('git commit -m "Auto-Update ' + str(datetime.datetime.now()) + '"')
     os.system('git push origin gh-pages')
 
 if __name__ == '__main__':
