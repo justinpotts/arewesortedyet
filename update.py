@@ -111,9 +111,9 @@ def push_update(percentages):
     css.close()
 
     # THIS IS THE MOST DANGEROUS CODE YOU'LL EVER SEE IN YOUR LIFE DO NOT RUN
-    os.system('git add css/heights.css')
-    os.system('git commit -m "Auto-Update ' + str(datetime.datetime.now()) + '"')
-    os.system('git push origin gh-pages')
+    # os.system('git add css/heights.css')
+    # os.system('git commit -m "Auto-Update ' + str(datetime.datetime.now()) + '"')
+    # os.system('git push origin gh-pages')
 
 if __name__ == '__main__':
     image_paths = {'red':'red.jpg',
