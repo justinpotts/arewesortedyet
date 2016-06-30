@@ -91,12 +91,12 @@ def push_update(percentages):
     # os.system('git push origin gh-pages')
 
 if __name__ == '__main__':
-    image_paths = {'red':'red.jpg',
-                   'orange':'orange.jpg',
-                   'yellow':'yellow.jpg',
-                   'green':'green.jpg',
-                   'blue':'blue.jpg',
-                   'purple':'purple.jpg'
+    image_paths = {'red':'red.png',
+                   'orange':'orange.png',
+                   'yellow':'yellow.png',
+                   'green':'green.png',
+                   'blue':'blue.png',
+                   'purple':'purple.png'
                   }
 
     color_percentages = {'red':0.0, 'orange':0.0, 'yellow':0.0, 'green':0.0, 'blue':0.0, 'purple':0.0}
