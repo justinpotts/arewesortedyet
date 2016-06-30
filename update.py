@@ -2,6 +2,7 @@ from PIL import Image
 import webcolors
 import os
 import datetime
+import cv2
 
 def closest_colour(requested_colour):
     min_colours = {}
@@ -108,3 +109,44 @@ if __name__ == '__main__':
         print percent, ':', color_percentages[percent]
 
     push_update(color_percentages)
+
+# Captures a single image from the camera and returns it in PIL format
+def get_image():
+    # read is the easiest way to get a full image out of a VideoCapture object.
+    retval, im = camera.read()
+    return im
+
+def take_picture():
+    # Camera 0 is the integrated web cam on my netbook
+    camera_port = 0
+
+    #Number of frames to throw away while the camera adjusts to light levels
+    ramp_frames = 30
+
+    # Now we can initialize the camera capture object with the cv2.VideoCapture class.
+    # All it needs is the index to a camera port.
+    camera = cv2.VideoCapture(camera_port)
+
+    # Ramp the camera - these frames will be discarded and are only used to allow v4l2
+    # to adjust light levels, if necessary
+    for i in xrange(ramp_frames):
+        temp = get_image()
+    print("Taking image...")
+    # Take the actual image we want to keep
+    camera_capture = get_image()
+    file = "./ball_pit.png"
+    # A nice feature of the imwrite method is that it will automatically choose the
+    # correct format based on the file extension you provide. Convenient!
+    cv2.imwrite(file, camera_capture)
+
+    # You'll want to release the camera, otherwise you won't be able to create a new
+    # capture object until your script exits
+    del(camera)
+
+def save_masked_images():
+    colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
+    ball_pit_img = cv2.imread('./ball_pit.png')
+    for color in colors:
+        mask = cv2.imread('./masks/' + color + '_mask.png')
+        new_img = cv2.bitwise_and(ball_pit_img, mask)
+        cv2.imwrite('./' + color + '.png', new_img)
