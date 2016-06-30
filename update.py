@@ -36,7 +36,7 @@ def get_percentage(path, color):
                 name = closest_name
             else:
                 name = actual_name
-            print name
+
             if 'red' in name or 'maroon' in name or 'tomato' in name:
                 color_count['red'] += 1
 
@@ -101,9 +101,9 @@ if __name__ == '__main__':
 
     color_percentages = {'red':0.0, 'orange':0.0, 'yellow':0.0, 'green':0.0, 'blue':0.0, 'purple':0.0}
 
-    #for color in image_paths:
-    #    color_percentages[color] = get_percentage(image_paths[color], color)
-    color_percentages[color] = get_percentage(image_paths['purple'], 'purple')
+    for color in image_paths:
+        color_percentages[color] = get_percentage(image_paths[color], color)
+
     for percent in color_percentages:
         print percent, ':', color_percentages[percent]
 
