@@ -18,7 +18,7 @@ Slowly but surely, you'll start to remove all the impurities from your soon-to-b
 
 A few tips:
 - Don't just stand randomly and sort everything. Use your position in the pit to sort everything that's not matching your position's dominant color. That way, you kill two birds with one stone.
-- Feel like you're not productive? [@mobyvb](https://github.com/mobyvb) has written [a script](https://github.com/mobyvb/ball-pit-sorting) to help you with just that. Run the Python script, and at a random time within a 30-60 minute interval, an air raid siren will go off. Spring into the ball pit. 5 minutes later, you'll hear "The test is now over." Calmly exit, and resume your normal operations.
+- Feel like you're not productive? [@mobyvb](https://github.com/mobyvb) has made [a website](http://mobyvb.com/ball-pit-sorting) (WARNING: LOUD ON PAGE OPEN) to help you with just that. This will sound an air raid siren at a random time every 30-60 minutes. Spring into the ball pit. 5 minutes later, you'll hear "The test is now over." Calmly exit, and resume your normal operations.
 - Maybe we'll make t-shirts. Maybe not. But either way, ping Justin or Moby on IRC with your progress! We'll update the dashboard for the whole company to see, and add you to our contributor list.
 
 Happy Sorting!
