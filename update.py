@@ -37,8 +37,6 @@ def get_percentage(path, color):
             else:
                 name = actual_name
 
-            print name
-
             if 'red' in name or 'maroon' in name or 'tomato' in name:
                 color_count['red'] += 1
 
@@ -67,9 +65,9 @@ def get_percentage(path, color):
     for item in color_count:
         color_percentages[item] = color_count[item] / total
 
-    print color_percentages
+    print color, ':', color_percentages
 
-    print round(color_percentages[color]*100)
+    print color, ':', round(color_percentages[color]*100)
     return round(color_percentages[color]*100)
 
 ##################################################################
@@ -82,30 +80,7 @@ def push_update(percentages):
     """Takes a dictionary of percentages, color name being the key
     and rounded float as value (Ex. 'red':93.0)."""
     css = open('css/heights.css', 'w')
-    new_code = '                                              \
-            #red {                                            \
-              height:%(red)s%%                                \
-            }                                                 \
-                                                              \
-            #orange {                                         \
-              height:%(orange)s%%                             \
-            }                                                 \
-                                                              \
-            #yellow {                                         \
-              height:%(yellow)s%%                             \
-            }                                                 \
-                                                              \
-            #green {                                          \
-              height:%(green)s%%                              \
-            }                                                 \
-                                                              \
-            #blue {                                           \
-              height:%(blue)s%%                               \
-            }                                                 \
-                                                              \
-            #purple {                                         \
-              height:%(purple)s%%                             \
-            }'
+    new_code = '#red {height:%(red)s%%} #orange {height:%(orange)s%%} #yellow {height:%(yellow)s%%} #green {height:%(green)s%%} #blue {height:%(blue)s%%} #purple {height:%(purple)s%%}'
     new_code = new_code % percentages
     css.write(new_code)
     css.close()
@@ -130,6 +105,6 @@ if __name__ == '__main__':
         color_percentages[color] = get_percentage(image_paths[color], color)
 
     for percent in color_percentages:
-        print percent, color_percentages[percent]
+        print percent, ':', color_percentages[percent]
 
     push_update(color_percentages)
