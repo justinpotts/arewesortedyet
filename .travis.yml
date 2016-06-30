@@ -1,0 +1,6 @@
+language: python
+python: 2.7
+install: 
+  - "sudo apt-get install libjpeg libjpeg-dev libfreetype6 libfreetype6-dev zlib1g-dev"
+  - "sudo apt-get install python-imaging"
+script: "python update.py"
