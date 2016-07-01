@@ -8,7 +8,9 @@ Mozilla is lucky enough to have an enormous ball pit in their Mountain View loca
 To make it even more awesome, [@justinpotts](https://github.com/justinpotts) and [@mobyvb](https://github.com/mobyvb) (along with other valuable contributors listed below) are sorting it by color to the tune of ROY G B(i)V.
 
 ## How do I get involved?
-It's easy. Show up at the ball pit (MTV2 - 211 Battlestar Galactica) and start sorting. We have a little bit of a process that will make things a bit easier though. 
+
+### Help us sort!
+It's easy. Show up at the ball pit (MTV2 - 211 Battlestar Galactica) and start sorting. We have a little bit of a process that will make things a bit easier though.
 
 1. Pick a color, any color.
 2. Dig down and stir things up. Don't worry about ruining the sorting, it'll get fixed.
@@ -22,6 +24,14 @@ A few tips:
 - Maybe we'll make t-shirts. Maybe not. But either way, ping Justin or Moby on IRC with your progress! We'll update the dashboard for the whole company to see, and add you to our contributor list.
 
 Happy Sorting!
+
+### Help us code!
+We're always in need of some help on the coding-side of things. Help make our updates quicker and more effective by contributing today!
+
+How to begin:
+1. Start with forking and cloning the repository.
+2. Install the requirements by typing `pip install -Ur requirements.txt`. We recommend using `virtualenv`.
+3. Make some changes and we'll add you to the contributors list!
 
 ## Our Contributors
 - [Peter Elemers](https://github.com/pelmers), Intern
