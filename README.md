@@ -7,6 +7,8 @@ Mozilla is lucky enough to have an enormous ball pit in their Mountain View loca
 
 To make it even more awesome, [@justinpotts](https://github.com/justinpotts) and [@mobyvb](https://github.com/mobyvb) (along with other valuable contributors listed below) are sorting it by color to the tune of ROY G B(i)V.
 
+We've installed a webcam above the ball pit that runs `update.py` and takes a photo, then returns the percentage sorted for each color and modifies our CSS attributes and commits it to the repository, updating the dashboard.
+
 ## How do I get involved?
 
 ### Help us sort!
@@ -38,6 +40,7 @@ How to begin:
 - [Paul Ellenbogen](https://github.com/paul-e), Intern
 - [Daniel Etcovitch](https://github.com/DanielEtcovitch), Intern
 - [Ryan Hunt](https://github.com/rlhunt), Intern
+- Eric Faust, Full Time, Manager
 - [Francesco Polizzi](https://github.com/FrancescoSTL), Intern
 - [Justin Potts](https://github.com/justinpotts), Intern
 - [Purush Swaminathan](https://github.com/purukaushik), Intern
