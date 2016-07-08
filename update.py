@@ -1,5 +1,3 @@
-from PIL import Image
-import webcolors
 import os
 import datetime
 import cv2
@@ -14,47 +12,46 @@ def closest_colour(requested_colour):
         min_colours[(rd + gd + bd)] = name
     return min_colours[min(min_colours.keys())]
 
-def get_colour_name(requested_colour):
-    try:
-        closest_name = actual_name = webcolors.rgb_to_name(requested_colour)
-    except ValueError:
-        closest_name = closest_colour(requested_colour)
-        actual_name = None
-    return actual_name, closest_name
+def rgb2hsv(r, g, b):
+    r, g, b = r/255.0, g/255.0, b/255.0
+    mx = max(r, g, b)
+    mn = min(r, g, b)
+    df = mx-mn
+    if mx == mn:
+        h = 0
+    elif mx == r:
+        h = (60 * ((g-b)/df) + 360) % 360
+    elif mx == g:
+        h = (60 * ((b-r)/df) + 120) % 360
+    elif mx == b:
+        h = (60 * ((r-g)/df) + 240) % 360
+    if mx == 0:
+        s = 0
+    else:
+        s = df/mx
+    v = mx
+    return h, s, v
 
 def get_percentage(path, color):
-    im = Image.open(path)
-    pix = im.load()
-    (width, height) = im.size
+    im = cv2.imread(path)
 
+    color_list = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
     color_count = {'red':0, 'orange':0, 'yellow':0, 'green':0, 'blue':0, 'purple':0}
+    color_hues = {'red': 15, 'orange': 45, 'yellow': 70, 'green': 190, 'blue': 260, 'purple': 300}
+    min_sat = 0.2
 
-    for x in range(width):
-        for y in range(height):
-            name = ''
-            actual_name, closest_name = get_colour_name(pix[x,y])
-            if actual_name is None:
-                name = closest_name
-            else:
-                name = actual_name
+    for col in im:
+        for pix in col:
+            hsv_pix = rgb2hsv(pix[2], pix[1], pix[0])
+            hue = hsv_pix[0]
+            sat = hsv_pix[1]
 
-            if 'red' in name or 'maroon' in name or 'tomato' in name:
-                color_count['red'] += 1
-
-            if 'orange' in name:
-                color_count['orange'] += 1
-
-            if 'yellow' in name or 'gold' in name:
-                color_count['yellow'] += 1
-
-            if 'green' in name or 'mintcream' in name:
-                color_count['green'] += 1
-
-            if 'blue' in name or 'azure' in name or 'navy' in name or 'turquoise' in name or 'indigo' in name or 'teal' in name and 'lightslateblue' not in name and 'steelblue' not in name:
-                color_count['blue'] += 1
-
-            if 'purple' in name or 'violet' in name or 'plum' in name or 'orchid' in name or 'rose' in name or 'lavender' in name or 'thistle' in name or 'mageneta' in name or 'lightslateblue' in name or 'steelblue' in name:
-                color_count['purple'] += 1
+            if sat > min_sat:
+                pix_placed = False
+                for curr_color in color_list:
+                    if not pix_placed and color_hues[curr_color] > hue:
+                        pix_placed = True
+                        color_count[curr_color] += 1
 
     total = 0.0
 
