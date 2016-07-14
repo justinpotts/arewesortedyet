@@ -37,7 +37,7 @@ def get_percentage(path, color):
 
     color_list = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']
     color_count = {'red':0, 'orange':0, 'yellow':0, 'green':0, 'blue':0, 'purple':0}
-    color_hues = {'red': 15, 'orange': 45, 'yellow': 70, 'green': 190, 'blue': 260, 'purple': 300}
+    color_hues = {'red': 15, 'orange': 45, 'yellow': 70, 'green': 190, 'blue': 240, 'purple': 300}
     min_sat = 0.2
 
     for col in im:
@@ -132,12 +132,12 @@ if __name__ == '__main__':
     take_picture()
     save_masked_images()
 
-    image_paths = {'red':'red.png',
-                   'orange':'orange.png',
-                   'yellow':'yellow.png',
-                   'green':'green.png',
-                   'blue':'blue.png',
-                   'purple':'purple.png'
+    image_paths = {'red':'./red.png',
+                   'orange':'./orange.png',
+                   'yellow':'./yellow.png',
+                   'green':'./green.png',
+                   'blue':'./blue.png',
+                   'purple':'./purple.png'
                   }
 
     color_percentages = {'red':0.0, 'orange':0.0, 'yellow':0.0, 'green':0.0, 'blue':0.0, 'purple':0.0}
